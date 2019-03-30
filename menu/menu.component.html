@@ -1,0 +1,6 @@
+<div [ngSwitch]="perfil">
+  <app-menu-admin *ngSwitchCase="1"></app-menu-admin>
+  <app-menu-docente *ngSwitchCase="2"></app-menu-docente>
+  <app-menu-alumno *ngSwitchCase="3"></app-menu-alumno>
+  <app-menu-publicador *ngSwitchCase="4"></app-menu-publicador>
+</div>

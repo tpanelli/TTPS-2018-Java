@@ -1,0 +1,37 @@
+<app-menu></app-menu>
+<div class="container" style="min-height:80vh">
+    <div class="col-4 mx-auto p-4 rounded bg-light" style="margin-top:12vh;border-color:#a30a16;border-style: solid;border-width: 2px">
+      <div style="text-align:center">
+        <h2>
+          Nueva cartelera
+        </h2>
+      </div>
+      <div class="form-group">
+          <p>{{ error }}</p>
+      </div>
+      <form (ngSubmit)="onSubmit()" #carteleraForm="ngForm">
+        <div class="form-group">
+          <label for="nombreCartelera">Nombre</label>
+          <input type="text" class="form-control" id="nombreCartelera" required [(ngModel)]="model.nombre" name="nombreCartelera">
+        </div>
+        <div class="form-group">
+          <label for="tipo">Tipo</label>
+          <select class="form-control" id="tipo" required [(ngModel)]="model.tipo" name="tipo">
+            <option value='materia'>Materia</option>
+            <option value='informativa'>Informativa</option>
+          </select>
+        </div>
+        <div class="form-group">
+            <label for="anio">Año</label>
+            <select class="form-control" id="anio" required [(ngModel)]="model.anio" name="anio">
+                <option value=1>Primero</option>
+                <option value=2>Segundo</option>
+                <option value=3>Tercero</option>
+                <option value=4>Cuarto</option>
+                <option value=5>Quinto</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-dark" [disabled]="!carteleraForm.form.valid">Enviar</button>
+      </form>
+    </div>
+  </div>

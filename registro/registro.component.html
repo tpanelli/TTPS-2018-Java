@@ -1,0 +1,35 @@
+<div class="container" style="min-height:80vh">
+  <div class="col-4 mx-auto p-4 border border-dark rounded bg-secondary text-white" style="margin-top:5vh">
+    <div style="text-align:center">
+      <h2>
+        {{ title }}
+      </h2>
+    </div>
+    <div class="form-group">
+        <p>{{ error }}</p>
+    </div>
+    <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+      <div class="form-group">
+        <label for="nombreUsuario">Nombre de usuario</label>
+        <input type="text" class="form-control" id="nombreUsuario" required [(ngModel)]="model.username" name="nombreUsuario">
+      </div>
+      <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input type="text" class="form-control" id="nombre" required [(ngModel)]="model.nombre" name="nombre">
+      </div>
+      <div class="form-group">
+        <label for="text">Apellido</label>
+        <input type="text" class="form-control" id="apellido" required [(ngModel)]="model.apellido" name="apellido">
+      </div>
+      <div class="form-group">
+        <label for="contrasena">Contraseña</label>
+        <input type="password" class="form-control" id="contrasena" required [(ngModel)]="model.password" name="contrasena">
+      </div>
+      <div class="form-group">
+        <label for="contrasena2"> Repetir contraseña</label>
+        <input type="password" class="form-control" id="contrasena2" required  name="contrasena2">
+      </div>
+      <button type="submit" class="btn btn-dark" [disabled]="!loginForm.form.valid">Ingresar</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<app-menu></app-menu>
+<h3 class="mb-3 ml-3 m-2">Carteleras</h3>
+<div class="ml-2 mb-3 container" *ngFor="let cartelera of carteleras">
+  <div class="col-6 rounded bg-light" style="border-color:#a30a16;border-style: solid;border-width: 2px">
+    <div>
+      <h4>
+        {{cartelera.nombre}}
+      </h4>
+    </div>
+    <h6>
+      Tipo: {{cartelera.tipo}}
+    </h6>
+    <h6 *ngIf='cartelera.anio > 0'>
+      Año: {{cartelera.anio}}
+    </h6>
+  </div>
+</div>

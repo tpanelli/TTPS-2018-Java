@@ -1,0 +1,26 @@
+<div class="container" style="min-height:80vh">
+    <div class="col-4 mx-auto p-4 rounded bg-light" style="margin-top:15vh;border-color:#a30a16;border-style: solid;border-width: 4px">
+      <div style="text-align:center">
+        <h2>
+          {{ title }}
+        </h2>
+      </div>
+      <div class="form-group">
+          <p>{{ error }}</p>
+      </div>
+      <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+        <div class="form-group">
+          <label for="nombreUsuario">Nombre de usuario</label>
+          <input type="text" class="form-control" id="nombreUsuario" required [(ngModel)]="model.username" name="nombreUsuario">
+        </div>
+        <div class="form-group">
+          <label for="contrasena">Contraseña</label>
+          <input type="password" class="form-control" id="contrasena" required [(ngModel)]="model.password" name="contrasena">
+        </div>
+        <button type="submit" class="btn btn-dark" [disabled]="!loginForm.form.valid">Ingresar</button>
+      </form>
+      <div class="form-group mt-2">
+          <a routerLink='/registro' class="text-white">No tenes una cuenta? Registrate</a>
+      </div>
+    </div>
+  </div>
